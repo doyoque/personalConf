@@ -17,7 +17,7 @@ need to know exactly where the files belong to.
 
 Some packages or application will not work as you expected.
 There's so many resources for solving your own technical problem in the
-internet, se be dragon!.
+internet, so be dragon!.
 
 **This file repository contain**
 * **devEnvCommand**
