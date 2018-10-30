@@ -1,1 +1,5 @@
+#so grep is print lines matching a pattern. which mean you can search any word or pattern with this command
+#basic usage is grep "the_pattern" log.txt.
+#and this command i pipe the command so it can print multiple pattern at the same line at routes.php
+
 grep commentmonitoring/ routes.php --color=always | grep CommentMonitoringController@
