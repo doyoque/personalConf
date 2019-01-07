@@ -2,7 +2,7 @@
 
 **Make it easier**
 
-This repository contain three files for the sake of simplicity about
+This repository contain alot files for the sake of simplicity about
 setting up your development environment and against of boredom of looking.
 
 **Need to know**
