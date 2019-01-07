@@ -4,6 +4,7 @@ set shiftwidth=2
 set expandtab
 set laststatus=2
 set noshowmode
+set hlsearch
 let NERDTreeShowHidden=1
 syntax on
 
@@ -22,6 +23,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'storyn26383/vim-vue'
 call plug#end()
 
 autocmd StdinReadPre * let s:std_in=1
