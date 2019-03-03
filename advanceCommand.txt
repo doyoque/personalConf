@@ -3,3 +3,23 @@
 #and this command i pipe the command so it can print multiple pattern at the same line at routes.php
 
 grep commentmonitoring/ routes.php --color=always | grep CommentMonitoringController@
+
+#we have supervisor (you can check at http://supervisord.org/)
+
+#to know the services is run
+supervisorctl
+
+#to read new configuration of supervisor
+supervisorctl reload
+
+#to run new proccess of supervisor
+supervisorctl update
+
+#check if supervisor is running well
+supervisor> status
+
+#next we can check the installed software packages on linux with this command
+sudo apt list --installed
+
+#if you want to combine with grep to get the specific installed package, pipe it with grep
+sudo apt list --installed | grep "apache"
