@@ -10,7 +10,7 @@ setting up your development environment and against of boredom of looking.
 I'm using Ubuntu for my Operating System (tested in 16.04 and 18.04). 
 If you using different operating system
 like windows or maybe different distro, this repo is not for you.
-And except for devEnvCommand is hidden file that start with dot(.) and you
+And for uyee is hidden file that start with dot(.) and you
 need to know exactly where the files belong to.
 
 **Disclaimer**
