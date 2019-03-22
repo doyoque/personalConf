@@ -28,3 +28,6 @@ sudo ufw allow ssh <--- if you want to enable firewall for ssh connection
 
 #if you want to connect to a server or maybe a host via ssh
 ssh root@192.168.xx.x <--- the meaning of command is you want to connect to a server with root privilege at host 192.168.xx.xx
+
+#if you want to compile C source code
+gcc cSource.c -o yourprogramname <--- the meaning of command is you put cSource.c after gcc command and then specify the output name of your program with -o. After that you can access with (dot)/yourprogramname
