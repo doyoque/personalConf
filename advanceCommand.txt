@@ -4,22 +4,27 @@
 
 grep commentmonitoring/ routes.php --color=always | grep CommentMonitoringController@
 
-#we have supervisor (you can check at http://supervisord.org/)
-
-#to know the services is run
-supervisorctl
-
-#to read new configuration of supervisor
-supervisorctl reload
-
-#to run new proccess of supervisor
-supervisorctl update
-
-#check if supervisor is running well
-supervisor> status
-
 #next we can check the installed software packages on linux with this command
 sudo apt list --installed
 
-#if you want to combine with grep to get the specific installed package, pipe it with grep
+#if you want to know the specific installed package, pipe it with grep
 sudo apt list --installed | grep "apache"
+
+#for list a content inside a directory we can use "ls"
+ls <--- if we only use this we can list all named file or folder in our working directory
+ls -a <--- if you want to take a look for permission, date created, and size file in a working directory
+ls /var/www <--- similar to ls but we give first argument a specific directory that we want to look
+ls -la <--- use "-l" to take a look an hidden file (most hidden file in linux is using dot at the first name of the file)
+
+#if you want to know where is the location of you binary or your source application use whereis
+whereis ls <--- this will output the location of ls
+whereis grep <--- even grep is a binary program that can be executable
+
+#if you want to activate firewall you can activate it with ufw
+sudo ufw status <--- check if firewall is enable or not
+sudo ufw enable <--- enable the firewall
+sudo ufw status verbose <--- check status with verbose (or detailed)
+sudo ufw allow ssh <--- if you want to enable firewall for ssh connection
+
+#if you want to connect to a server or maybe a host via ssh
+ssh root@192.168.xx.x <--- the meaning of command is you want to connect to a server with root privilege at host 192.168.xx.xx
