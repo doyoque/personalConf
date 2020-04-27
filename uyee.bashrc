@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u\[\033[00;31m\]🔥\[\033[0;34m\]\W\[\033[00m\]\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u\[\033[00;31m\]@\[\033[0;34m\]\W\[\033[00m\]\$ '
 else
-   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -137,26 +137,23 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/home/ebdesk/cocos2d-x-3.17/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT="/home/doyoque/cocos2d-x/tools/cocos2d-console/bin"
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # Add environment variable COCOS_X_ROOT for cocos2d-x
-export COCOS_X_ROOT=/home/ebdesk
+export COCOS_X_ROOT="/home/doyoque"
 export PATH=$COCOS_X_ROOT:$PATH
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/home/ebdesk/cocos2d-x-3.17/templates
+export COCOS_TEMPLATES_ROOT="/home/doyoque/cocos2d-x/templates"
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
 # Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/home/ebdesk/Android/Sdk/
+export ANDROID_SDK_ROOT="/home/doyoque/Android/Sdk/"
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 # Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/home/ebdesk/Android/Sdk/ndk-bundle/
+export NDK_ROOT="/home/doyoque/Android/Sdk/ndk-bundle/"
 export PATH=$NDK_ROOT:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
