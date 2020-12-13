@@ -1,8 +1,10 @@
 filetype plugin indent on
 set encoding=UTF-8
 set nu
+set smarttab
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
 set laststatus=2
 set noshowmode
@@ -15,7 +17,6 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 set whichwrap+=<,>,[,]
-set noexpandtab
 set undofile " Maintan undo history between sessions
 set undodir=~/.vim/undodir
 set directory^=~/.vim/swp//
@@ -80,5 +81,31 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'storyn26383/vim-vue'
 call plug#end()
 
+" Gutentags
+" Don't load me if there's no ctags file
+if !executable('ctags')
+    let g:gutentags_dont_load = 1
+endif
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+"...
+set termguicolors
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
+
+" put this in your .vimrc
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
+
+" Nerdtree config for wildignore
+let NERDTreeRespectWildIgnore=1

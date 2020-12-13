@@ -157,3 +157,36 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 export NDK_ROOT="/home/doyoque/Android/Sdk/ndk-bundle/"
 export PATH=$NDK_ROOT:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+# Alias custom for cd
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
+# Alias custom for projects
+alias ..js="cd /home/doyoque/Documents/Programming/js"
+alias ..php="cd /home/doyoque/Documents/Programming/php"
+alias ..cpp="cd /home/doyoque/Documents/Programming/cpp"
+alias ..ktl="cd /home/doyoque/Documents/Programming/kotlin"
+alias ..mul="cd /home/doyoque/Documents/Programming/php/multiverse"
+alias joy="cd /home/doyoque/Documents/Programming/php/best-practice-laravel"
+
+# Add ANDROID_HOME pathname
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH=$ANDROID_HOME:$PATH
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/doyoque/.sdkman"
+[[ -s "/home/doyoque/.sdkman/bin/sdkman-init.sh" ]] && source "/home/doyoque/.sdkman/bin/sdkman-init.sh"
+
+# set deno
+export DENO_INSTALL="/home/doyoque/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Alias custom for C/C++ compiler also generate basic init source file
+alias castC="gcc -Wall -save-temps"
+alias castCpp="g++ -Wall -save-temps"
+alias stdC="echo -e '#include <iostream>\n\nint main() {\n\tprintf(\"hello world\");\n\treturn 0;\n}'"
+
