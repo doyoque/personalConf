@@ -1,5 +1,8 @@
 filetype plugin indent on
+set term=xterm-256color
+set t_Co=256
 set encoding=UTF-8
+set showtabline=2
 set nu
 set smarttab
 set tabstop=2
@@ -29,6 +32,7 @@ set foldmethod=indent
 set foldlevel=20
 let g:go_fmt_command = "goimports"
 let mapleader=" "
+let g:NERDTreeWinPos = "left"
 
 if !has('nvm')
   set ttymouse=
@@ -65,7 +69,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mhinz/vim-mix-format'
 Plug 'elzr/vim-json'
 Plug 'pbogut/fzf-mru.vim'
-"
+Plug 'jiangmiao/auto-pairs'
 Plug 'jwalton512/vim-blade'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
@@ -79,6 +83,7 @@ Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'storyn26383/vim-vue'
+Plug 'mengelbrecht/lightline-bufferline'
 call plug#end()
 
 " Gutentags
@@ -109,3 +114,61 @@ set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
 
 " Nerdtree config for wildignore
 let NERDTreeRespectWildIgnore=1
+
+" set runtimepath+=~/.vim_runtime
+" source ~/.vim_runtime/vimrcs/basic.vim
+" source ~/.vim_runtime/vimrcs/filetypes.vim
+" source ~/.vim_runtime/vimrcs/plugins_config.vim
+" source ~/.vim_runtime/vimrcs/extended.vim
+" try
+"   source ~/.vim_runtime/my_configs.vim
+" catch
+" endtry
+nmap <F6> :NERDTreeToggle<CR>
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+" go to prev buffer
+map <S-H> :bp<cr>
+" go to next buffer
+map <S-L> :bn<cr>
+
+" utilize shift + tab for switch between buffer
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
+" airline config
+let g:airline_powerline_fonts = 1
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#show_tabs = 0
+
+" au BufRead,BufNewFile *.htm set filetype=php
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ }
+      \ }
+
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-json',
+  \ 'coc-prettier',
+  \ 'coc-eslint',
+  \ 'coc-phpls',
+  \ 'coc-go',
+  \ 'coc-elixir',
+  \ 'coc-html',
+  \ 'coc-omnisharp'
+  \ ]
